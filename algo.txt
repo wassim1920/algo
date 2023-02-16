@@ -1,0 +1,30 @@
+ALGORITHM sum
+VAR
+  ls,lw,lv: INTEGER := 0; //ls (length.sentence), lw (words number), lv (vowels number)
+  
+  str : STRING := "what is your name.";
+  cr : CHAR <> ".";
+
+BEGIN
+ 
+ WHILE (cr<>".") DO
+
+    cr = str[ls]; 
+    ls = ls+1;
+    IF (cr == " ") THEN
+      lw= lw+1;
+    END_IF  
+
+    IF (cr=="a" or cr=="e" or cr=="i" or cr=="o" or cr=="u" or cr=="y") THEN
+      lv=lv+1;
+    END_IF  
+
+ END_WHILE
+ 
+    WRITE("The length of the sentence is : ", ls - lw); //lw (nombre d'espace) 
+                                                        //donc il faut elliminer 
+                                                        //le nbre d'espace pour avoir le vrai nbre du ch
+
+    WRITE("The number of words is : ", lw+1);           // le nombre du mots c'est le nombre d'espace +1.
+    WRITE("The number of vowels is : " ,lv);
+ENDs
